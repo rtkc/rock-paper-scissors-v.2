@@ -89,7 +89,7 @@ class Human < Player
     elsif 0.6 <= move_log.count('scissors') / move_log.size.to_f
       'rock'
     else
-      'no pattern'
+      nil
     end
   end
 end
@@ -100,7 +100,7 @@ class Computer < Player
   end
 
   def choose(pattern)
-    if pattern != 'no pattern'
+    if pattern
       self.move = Move.new(pattern)
       puts "Pattern found: #{pattern}"
     else
